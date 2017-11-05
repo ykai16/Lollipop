@@ -1,0 +1,16 @@
+Signal	BED	Peak
+Motif	No	/media/Data/Dropbox/Research/data/hg19/CTCF_motif/CTCF_motifs_p1e-5_with_phastCons.txt
+HS	/media/Data/data/hg19/ENCODE_HeLa/bed/DNase_ENCFF000SPJ_rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/HelaS3DukeDNaseSeq.bed
+H2AFZ	/media/Data/data/hg19/ENCODE_HeLa/bed/H2AFZ_ENCFF000BAX-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H2AFZ_ENCFF001SVT.bed
+H3K4me1	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K4me1_ENCFF000BBA-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K4me1_ENCFF001SVU.bed
+H3K4me2	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K4me2_ENCFF000BCH-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K4me2_ENCFF001SVZ.bed
+H3K4me3	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K4me3_ENCFF000BCO-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K4me3_ENCFF001SWA.bed
+H3K9ac	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K9ac_ENCFF000BCW-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K9ac_ENCFF001SWC.bed
+H3K9me3	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K9me3_ENCFF000BBG-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K9me3_ENCFF001SVV.bed
+H3K27ac	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K27ac_ENCFF000BBN-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K27ac_ENCFF001SVW.bed
+H3K27me3	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K27me3_ENCFF000BBS-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K27me3_ENCFF001SVX.bed
+H3K36me3	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K36me3_ENCFF000BCC-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K36me3_ENCFF001SVY.bed
+H3K79me2	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K79me2_ENCFF000BCQ-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K79me2_ENCFF001SWB.bed
+H4K20me1	/media/Data/data/hg19/ENCODE_HeLa/bed/H3K20me1_ENCFF000BDC-rmdup.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/HeLa/H3K20me1_ENCFF001SWD.bed
+CTCF	/media/Data/data/hg19/ENCODE_HeLa/bed/CTCF_ENCFF000BAJ_rmdup.bed	No
+Gene expression	No	/media/Data/Dropbox/Research/Ongoing/CTCF_loops/data/HeLa/HeLa_exp.txt
