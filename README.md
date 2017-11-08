@@ -39,7 +39,7 @@ You can also generate training data for any cell-type of interest, as long as yo
 Lollipop uses random forest classifier to distinguish positive loops from negative loops. The classifier trained from the three cell-lines (in `.pkl` format) and the *de novo* predictions made by each classicier are available in `denovo_predictions`. The format of predicted loops is:
 
 | chrom   |      start1      |  start2 |     probability      |    yes\_or_no      |  
-|----------|:-------------:|------:|:-------------:|:-------------:|:-------------:|
+|----------|:-------------:|------:|:-------------:|:-------------:|
 
 Predicted loops that can be visualized in genome browsers, such as UCSC genome browser, IGV and Washington U genome browser, are also available in the same folder.
 
