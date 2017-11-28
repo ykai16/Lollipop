@@ -19,9 +19,9 @@ We recommend to use [Anaconda python distribution](https://www.anaconda.com/what
 
 ## Input Data
 
-The input data used by *Lollipop* are available in `input_data`. For a complete list of used data set, please see Supplementary Methods and Table 1 in the paper.
+The input data used by *Lollipop* are available in `input_data`. For a summary of used data set, please see Supplementary Methods and Table 1 in the paper.
 
-## Generation of Training Data
+## Generating Training Data
 
 Pre-generated training data used in the paper are available in `training_data`. The data format is:
 
@@ -33,6 +33,9 @@ You can also generate training data for any cell-type of interest, as long as yo
 1. Use `prepare_training_interactions.py` to prepare the positive and negative loops for training purpose.
 
 2. Run `add_features.py` to characterize the prepared loops. 
+
+## Building a model
+A model can be generated from 
 
 ## Making *De Novo* Predictions
 
