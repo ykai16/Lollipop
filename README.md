@@ -30,7 +30,7 @@ Pre-generated training data used in the paper are available in `training_data`. 
 
 You can also generate training data for any cell-type of interest, as long as you have experimental data for CTCF-mediated loops, such as CTCF ChIA-PET and Hi-ChIP data. It takes two steps to do so:
 
-### Step 1. Use `prepare_training_interactions.py` to prepare the positive and negative loops for training purpose.
+### Step 1. Preparing positive and negative loops for training purpose.
 
 Usage:
 
@@ -44,7 +44,7 @@ Parameters:
 
 `-o $training_interactions:`Output file with positive and negative loops in the following format: `chrom anchor1 anchor2 response loop-length`, where `anchor1/2` is the genomic coordinate of the middle point of left/right anchor.
 
-### Step2. Run `add_features.py` to characterize the prepared loops.
+### Step2. Characterizing prepared loops.
 
 Usage: 
 
