@@ -11,14 +11,13 @@ import lib
 
 def main(argv):
     parser = OptionParser()
-    parser.add_option("-m", "--motif", action="store", type="string", dest="motif", metavar="<file>", help="The CTCF motif file with phastCon information in")
     parser.add_option("-b", "--bs", action="store", type="string", dest="bs", metavar="<file>", help="the CTCF ChIP-Seq peak file")
-    parser.add_option("-t", "--table", action="store", type="string", dest="info_table", metavar="<file>", help="the infomation table contains the paths for necessary files.")
+    parser.add_option("-t", "--table", action="store", type="string", dest="info_table", metavar="<file>", help="the infomation table contains the paths of necessary files.")
     parser.add_option("-c", "--clf", action="store", type="string", dest="clf", metavar="<file>", help="The trained classifier for identifying the interacting loop pairs")
     parser.add_option("-o", "--outdir", action="store", type="string", dest="outdir", help="The directory for output files, predicted loops, etc")
 
     (opt, args) = parser.parse_args(argv)
-    if len(argv) < 10:
+    if len(argv) < 8:
         parser.print_help()
         sys.exit(1)
 

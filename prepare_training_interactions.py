@@ -1,4 +1,3 @@
-# !/bash
 # Author: Yan Kai
 # Date: May 29th, 2017
 # This script is to prepare the high-confidence positive and negative long-range interactions among CTCF binding sites, as revealed from ChIP-Seq or ChIA-PET.
