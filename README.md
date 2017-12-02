@@ -1,6 +1,6 @@
 # Lollipop
 
-Lollipop is a machine-learning-based framework for predicting the CTCF-mediated interactome by integrating genetic, epigenetic and gene expression data. In our paper *Predicting CTCF-mediated chromatin interactions by integrating genomic and epigenomic features*（`link`）, it was used for:
+Lollipop is a machine-learning-based framework for predicting the CTCF-mediated interactome by integrating genetic, epigenetic and gene expression data. In our paper *Predicting CTCF-mediated chromatin interactions by integrating genomic and epigenomic features*（`https://www.biorxiv.org/content/early/2017/12/01/215871`）, it was used for:
 
 * Creating positive and negative training data.
 * Training a model that distinguishes positive loops from negative loops.
