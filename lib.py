@@ -83,7 +83,8 @@ def prepare_reads_info(signal_table):
 
                 read_info[factor][chrom].append(start)
             read_numbers[factor] = read_number
-            read_info[factor][chrom] = sorted(read_info[factor][chrom])
+            for chrom in read_info[factor].keys():
+                read_info[factor][chrom] = sorted(read_info[factor][chrom])
             BED_reader.close()
 
     return (read_info, read_numbers)

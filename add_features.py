@@ -206,7 +206,10 @@ def add_local_feature(signal, train, BED):
         read_info[chrom].append(start)
     BED_reader.close()
 
-    read_info[chrom] = sorted(read_info[chrom])
+    # make sure reads are sorted
+    for chrom in read_info.keys():
+        read_info[chrom] = sorted(read_info[chrom])
+        
     RPKMs1 = []
     RPKMs2 = []
     for index, row in train.iterrows():
@@ -293,6 +296,10 @@ def add_regional_feature_by_reads(signal, train, anchors, BED):
             start = end - shift
         signal_dic[chrom].append(start)
     BED.close()
+    
+    # make sure reads are sorted
+    for chrom in signal_dic.keys():
+        signal_dic[chrom] = sorted(signal_dic[chrom])
 
     in_between = []
     upstream = []
