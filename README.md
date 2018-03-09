@@ -28,7 +28,7 @@ Pre-generated training data used in the paper are available in `training_data`. 
 | chrom   |      start1      |  start2 |     response      | ...features...     |
 |----------|:-------------:|------:|:-------------:|:-------------:|
 
-You can also generate training data for any cell-type of interest, as long as you have experimental data for CTCF-mediated loops, such as CTCF ChIA-PET and Hi-ChIP data. It takes two steps to do so:
+One can also generate training data for any cell-type of interest, as long as experimental data for CTCF-mediated loops, such as CTCF ChIA-PET and Hi-ChIP data, are available. It takes two steps to do so:
 
 ### Step 1. Preparing positive and negative loops for training purpose.
 
@@ -74,14 +74,14 @@ Parameters:
 
 ## Making *De Novo* Predictions
 
-Lollipop employs a random forest classifier to distinguish positive from negative loops. The classifier trained from the three cell-lines (in `.pkl` format) and the *de novo* predictions made by each classicier are available in `denovo_predictions`. The format of predicted loops is:
+Lollipop employs a random forest classifier to distinguish positive from negative loops. The classifier trained from three cell-lines (in `.pkl` format) and the *de novo* predictions made by each classicier are available in `denovo_predictions`. The format of predicted loops is:
 
 | chrom   |      start1      |  start2 |     probability      |    yes\_or_no      |  
 |----------|:-------------:|------:|:-------------:|:-------------:|
 
 Predicted loops that can be visualized in genome browsers, including UCSC genome browser, IGV and Washington U genome browser, are also available in the same folder.
 
-You can also apply the trained models to make *de novo* predictions in a cell-type of interest by running `make_denovo_predictions.py`.
+One can also apply the trained models to make *de novo* predictions in a cell-type of interest by running `make_denovo_predictions.py`.
 
 Usage:
 
