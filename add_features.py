@@ -242,28 +242,39 @@ def add_gene_expression(train, Peak):
     exp_file = pd.read_table(Peak)
     gene_exp = {}  # {'chrom':{iv1:fpkm1,iv2:fpkm2...}}
     for index, row in exp_file.iterrows():
-        gene = row['gene_id']
-        region = row['locus']
-        fpkm = row['value']
-        chrom = region.split(':')[0]
-        start = int(region.split(':')[1].split('-')[0])
-        end = int(region.split(':')[1].split('-')[1])
+        gene = row['gene']
+        fpkm = row['expression']
+        chrom = row['chrom']
+        start = row['promoter_start']
+        end = row['promoter_end']
         iv = HTSeq.GenomicInterval(chrom, start, end, '.')
         if chrom not in gene_exp.keys():
             gene_exp[chrom] = {}
         gene_exp[chrom][iv] = fpkm
 
     loop_expressions = []
+
     for index, row in train.iterrows():
         chrom = row['chrom']
         start1 = row['start1']
         start2 = row['start2']
-        iv = HTSeq.GenomicInterval(chrom, start1, start2)
-        loop_expression = 0
+
+
+        iv = HTSeq.GenomicInterval(chrom, start1, start2, '.')
+        total_expression = 0
+
+        count = 0
         for gene in gene_exp[chrom].keys():
-            if gene.overlaps(iv):
-                loop_expression += gene_exp[chrom][gene]
+            if iv.contains(gene):
+                total_expression += gene_exp[chrom][gene]
+                count += 1
+
+        if count == 0:
+            loop_expression = 0
+        else:
+            loop_expression = total_expression/float(count)
         loop_expressions.append(loop_expression)
+
     train['expression'] = pd.Series(loop_expressions, index = train.index)
     return train
 

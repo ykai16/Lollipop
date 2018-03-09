@@ -308,8 +308,7 @@ def add_features(data, anchor_motifs, read_info, read_numbers, signals):
 def add_gene_expression(data, signal_table):
     """
     This function is to add the gene expression value of the looped region as a feature.The gene expression file's format is:
-    gene_id   locus   value
-    A1BG    chr19:coordinate1-coordiate2   1.31
+    gene chrom promoter_start promoter_end expression
 
     """
     for index,row in signal_table.iterrows():
@@ -318,12 +317,11 @@ def add_gene_expression(data, signal_table):
             exp_file = pd.read_table(row['Peak'])
             gene_exp = {}  # {'chrom':{iv1:fpkm1,iv2:fpkm2...}}
             for index, row in exp_file.iterrows():
-                gene = row['gene_id']
-                region = row['locus']
-                fpkm = row['value']
-                chrom = region.split(':')[0]
-                start = int(region.split(':')[1].split('-')[0])
-                end = int(region.split(':')[1].split('-')[1])
+                gene = row['gene']
+                fpkm = row['expression']
+                chrom = row['chrom']
+                start = row['promoter_start']
+                end = row['promoter_end']
                 iv = HTSeq.GenomicInterval(chrom, start, end, '.')
                 if chrom not in gene_exp.keys():
                     gene_exp[chrom] = {}
@@ -333,11 +331,17 @@ def add_gene_expression(data, signal_table):
                 chrom = row['chrom']
                 start1 = row['peak1']
                 start2 = row['peak2']
-                iv = HTSeq.GenomicInterval(chrom, start1, start2)
-                loop_expression = 0
+                iv = HTSeq.GenomicInterval(chrom, start1, start2,'.')
+                total_expression = 0
+                count = 0
                 for gene in gene_exp[chrom].keys():
-                    if gene.overlaps(iv):
-                        loop_expression += gene_exp[chrom][gene]
+                    if iv.contains(gene):
+                        total_expression += gene_exp[chrom][gene]
+                        count += 1
+                if count == 0:
+                    loop_expression = 0
+                else:
+                    loop_expression = total_expression/float(count)
                 loop_expressions.append(loop_expression)
             data['expression'] = pd.Series(loop_expressions, index = data.index)
     return data
