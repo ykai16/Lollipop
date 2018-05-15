@@ -14,6 +14,7 @@ def main(argv):
     parser.add_option("-b", "--bs", action="store", type="string", dest="bs", metavar="<file>", help="the CTCF ChIP-Seq peak file")
     parser.add_option("-t", "--table", action="store", type="string", dest="info_table", metavar="<file>", help="the infomation table contains the paths of necessary files.")
     parser.add_option("-c", "--clf", action="store", type="string", dest="clf", metavar="<file>", help="The trained classifier for identifying the interacting loop pairs")
+    parser.add_option("-f", "--features", action="store", dest="with_features", help="Use 'True' to characterize predicted loops with features, default False", default=False)
     parser.add_option("-o", "--outdir", action="store", type="string", dest="outdir", help="The directory for output files, predicted loops, etc")
 
     (opt, args) = parser.parse_args(argv)
@@ -27,6 +28,11 @@ def main(argv):
     outfilename = opt.outdir+'/Lollipop_loops.txt'
     bedope_name = opt.outdir+'/Lollipop_loops.bedpe'
     loop_cvg = opt.outdir+'/Lollipop_loops_cvg.bedgraph'
+    if opt.with_features == 'True':
+        outfilename_with_features = opt.outdir+'/Lollipop_loops_with_features.txt'
+        outfile_with_features = open(outfilename_with_features, 'w')
+
+
     motif_length = 18
 
 
@@ -65,6 +71,8 @@ def main(argv):
     bedope = open(bedope_name, 'w')
     cvg = HTSeq.GenomicArray('auto', stranded=False, typecode='i')
 
+    header_print = 0
+
     for chrom in summits.keys():
         print "Preparing data for "+chrom+'...'
         summits[chrom] = sorted(summits[chrom])
@@ -78,6 +86,12 @@ def main(argv):
         data = lib.add_anchor_conservation(data, chrom, signal_table.iloc[1,2])
 
         data = lib.prepare_features_for_interactions(data, summits, signal_table, raw_features)
+
+        if opt.with_features == 'True' and header_print == 0:
+            header = 'chrom\tanchor1\tanchor2\tprobability\t'+'\t'.join(map(str, list(data)[3:]))+'\n'
+            outfile_with_features.write(header)
+            header_print = 1
+
         X = data.iloc[:,3:].as_matrix()
         y = loop_clf.predict(X[:,:])
         probas = loop_clf.predict_proba(X[:,:]) # probas is an array of shape [n_samples, n_classes]
@@ -89,11 +103,16 @@ def main(argv):
                 bedope.write(outline1)
                 iv = HTSeq.GenomicInterval(chrom, int(data.iloc[i,1]), int(data.iloc[i,2]), '.')
                 cvg[iv] += 1
+                if opt.with_features == 'True':
+                    outline2 = chrom+'\t'+str(int(data.iloc[i,1]))+'\t'+str(int(data.iloc[i,2]))+'\t'+str(probas[i,1])+'\t'+'\t'.join(map(str, data.iloc[i,3:]))+'\n'
+                    outfile_with_features.write(outline2)
 
 
     cvg.write_bedgraph_file(loop_cvg)
     outfile.close()
     bedope.close()
+    if opt.with_features == True:
+        outfile_with_features.close()
 
 
 

@@ -85,7 +85,7 @@ One can also apply the trained models to make *de novo* predictions in a cell-ty
 
 Usage:
 
-`python make_denovo_predictions.py -b $CTCF_Peaks -t $information_table -c $classifier -o $output_folder`
+`python make_denovo_predictions.py -b $CTCF_Peaks -t $information_table -c $classifier -f True or False -o $output_folder`
 
 Parameters:
 
@@ -94,6 +94,8 @@ Parameters:
 `-t $information_table:` A table containing the paths of genomic and epigenomic datasets to derive features.
 
 `-c $classifier:`The trained classifier used for making predictions.
+
+`-f True or False:` An option to choose whether or not to output features for predicted loops. Default is 'False'.
 
 `-o $output_folder:`The output folder for results. Output files include predicted loops in different formats that can be visulized in genome browser.
 
