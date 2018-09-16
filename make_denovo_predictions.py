@@ -1,6 +1,5 @@
 import re,os,sys
 from optparse import OptionParser
-from sklearn import svm
 from sklearn.feature_selection import RFE
 import numpy as np
 import pandas as pd

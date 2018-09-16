@@ -54,7 +54,7 @@ Parameters:
 
 `-i $training_interactions:` Output file from step1.
 
-`-t $information_table:` A table containing the paths of genomic and epigenomic datasets to derive features. An example of this table can be seen in `input_data`. 
+`-t $information_table:` A table containing the paths of genomic and epigenomic datasets to derive features. An example of this table can be seen in `data`. 
 
 `-o $training_data:` Output file with positive and negative loops characterized by a set of features. 
 
