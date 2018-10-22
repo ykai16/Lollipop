@@ -17,13 +17,31 @@ Lollipop requires the following packages:
 
 We recommend to use [Anaconda python distribution](https://www.anaconda.com/what-is-anaconda/) for installation of the above packages.
 
+<<<<<<< HEAD
+## FAQs
+
+### If I want to make predictions in a cell-type of interest, do I have to have all the features used here?
+
+Here we used 77 features in total to predict CTCF loops in the three cell-types. However, if you want to make predictions in a cell-type of interest, you don't need to incorporate all these features because sometimes some features are inavailable. In such cases, please train a model by using the selected (i.e. available) features in one of the three cell-types to train a model, and then apply this model to the cell-type of interest.
+
+## Input Data and Format
+A complete list of used genomic and epigenomic data can be seen in the signal table in `data/example_signal_table.txt`. Some notes about data format:
+
+* CTCF motifs and underlying sequence conservation. A prepared file that is ready to use can be downloaded from `data`.
+* ChIP-seq data sets. Both the sequecing files and peaks are in BED format (only the first 3 columns will be used).
+* Gene expression file format. The data format is listed below, and please keep the exact file header as listed below.
+
+| gene   |      chrom      |  promoter_start |     promoter_end      | expression     |
+|----------|:-------------:|------:|:-------------:|:-------------:|
+=======
 ## Input Data
+>>>>>>> parent of 328886a... A major update
 
 The input data used by *Lollipop* are available in `input_data`. For a summary of used data set, please see Supplementary Methods and Table 1 in the paper.
 
 ## Generating Training Data
 
-Pre-generated training data used in the paper are available in `training_data`. The data format is:
+Pre-generated training data used in the paper can be downloaded [here] (https://www.dropbox.com/sh/g2wn6tau6alahp9/AABdwSIbDhwM-qlgb1qOMDzva?dl=0). The data format is:
 
 | chrom   |      start1      |  start2 |     response      | ...features...     |
 |----------|:-------------:|------:|:-------------:|:-------------:|
