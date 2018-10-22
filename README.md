@@ -1,6 +1,6 @@
 # Lollipop
 
-Lollipop is a machine-learning-based framework for predicting the CTCF-mediated interactome by integrating genetic, epigenetic and gene expression data. In our paper *Predicting CTCF-mediated chromatin interactions by integrating genomic and epigenomic features*（`https://www.biorxiv.org/content/early/2017/12/01/215871`）, it was used for:
+Lollipop is a machine-learning-based framework for predicting the CTCF-mediated interactome by integrating genetic, epigenetic and gene expression data. In our paper *Predicting CTCF-mediated chromatin interactions by integrating genomic and epigenomic features*（[Kai et.al 2018](https://www.nature.com/articles/s41467-018-06664-6)）, it was used for:
 
 * Creating positive and negative training data.
 * Training a model that distinguishes positive loops from negative loops.
@@ -17,12 +17,10 @@ Lollipop requires the following packages:
 
 We recommend to use [Anaconda python distribution](https://www.anaconda.com/what-is-anaconda/) for installation of the above packages.
 
-<<<<<<< HEAD
 ## FAQs
 
 ### If I want to make predictions in a cell-type of interest, do I have to have all the features used here?
-
-Here we used 77 features in total to predict CTCF loops in the three cell-types. However, if you want to make predictions in a cell-type of interest, you don't need to incorporate all these features because sometimes some features are inavailable. In such cases, please train a model by using the selected (i.e. available) features in one of the three cell-types to train a model, and then apply this model to the cell-type of interest.
+Here we used 77 features in total to predict CTCF loops in the three cell-types. However, if you want to make predictions in a cell-type of interest, you don't need to incorporate all these features because sometimes some features are inavailable. In such cases, please train a model by using the selected (i.e. available) features in one of the three cell-types to train a model, and apply this model to the cell-type of interest.
 
 ## Input Data and Format
 A complete list of used genomic and epigenomic data can be seen in the signal table in `data/example_signal_table.txt`. Some notes about data format:
@@ -33,11 +31,7 @@ A complete list of used genomic and epigenomic data can be seen in the signal ta
 
 | gene   |      chrom      |  promoter_start |     promoter_end      | expression     |
 |----------|:-------------:|------:|:-------------:|:-------------:|
-=======
-## Input Data
->>>>>>> parent of 328886a... A major update
 
-The input data used by *Lollipop* are available in `input_data`. For a summary of used data set, please see Supplementary Methods and Table 1 in the paper.
 
 ## Generating Training Data
 
@@ -59,6 +53,8 @@ Parameters:
 `-p $CTCF_peak:`CTCF peak file in BED format.
 
 `-a $CTCF_ChIA-PET_interactions:`CTCF-mediated interactions identified by ChIA-PET or other methods. The file format is `chrom1 start1 end1 chrom2 start2 end2 IAB FDR strand1 strand2`, where `IAB` is the number of PETs connecting the anchors and `FDR` is the statistical significance.
+
+`-c $CTCF_HiC_interactions:`CTCF-mediated interactions identified by HiC. The file format is `chrom	start1	start2	response	length`. We use this file to make sure the negative loops are not those real loops identified by methods other than ChIA-PET. If it is not available, you can provide an empty file but keep the header.
 
 `-o $training_interactions:`Output file with positive and negative loops in the following format: `chrom anchor1 anchor2 response loop-length`, where `anchor1/2` is the genomic coordinate of the middle point of left/right anchor.
 

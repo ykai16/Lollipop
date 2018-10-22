@@ -1,0 +1,18 @@
+Signal	BED	Peak
+Motif	No	/media/Data/Dropbox/Research/data/hg19/CTCF_motif/CTCF_motifs_p1e-5_with_phastCons.txt
+PhastCon	No	/media/Data/data/phastCon_raw
+HS	/media/Data/data/hg19/ENCODE_GM12878/bed/DNase_ENCFF000SKV_rmdup-island-filtered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/GM12878DukeDNaseSeq.bed
+H2AFZ	/media/Data/data/hg19/ENCODE_GM12878/SICER/H2AFZ_ENCFF000ARR-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H2AFZ_ENCFF001SUD.bed
+H3K4me1	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K4me1_ENCFF000ARY-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K4me1_ENCFF001SUE.bed
+H3K4me2	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K4me2_ENCFF000ATG-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K4me2_ENCFF001SUL.bed
+H3K4me3	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K4me3_ENCFF000ATS-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K4me3_ENCFF001SUF.bed
+H3K9ac	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K9ac_ENCFF000ATY-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K9ac_ENCFF001SUO.bed
+H3K9me3	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K9me3_ENCFF000AUH-rmdup-W200-G600-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K9me3_ENCFF001SUP.bed
+H3K27ac	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K27ac_ENCFF000ASI-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K27ac_ENCFF001SUG.bed
+H3K27me3	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K27me3_ENCFF000ASK-rmdup-W200-G600-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K27me3_ENCFF001SUI.bed
+H3K36me3	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K36me3_ENCFF000ASX-rmdup-W200-G600-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K36me3_ENCFF001SUJ.bed
+H3K79me2	/media/Data/data/hg19/ENCODE_GM12878/SICER/H3K79me2_ENCFF000ATT-rmdup-W200-G600-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H3K79me2_ENCFF001SUN.bed
+H4K20me1	/media/Data/data/hg19/ENCODE_GM12878/SICER/H4K20me1_ENCFF000AUT-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	/media/Data/Dropbox/Research/Ongoing/3D_Genome/CTCF_motif/data/GM12878/H4K20me1_ENCFF001SUQ.bed
+CTCF	/media/Data/data/hg19/ENCODE_GM12878/SICER/CTCF_ENCFF000ARG-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	/media/Data/data/hg19/ENCODE_GM12878/peaks/CTCF_ENCFF001VED.bed
+RAD21	/media/Data/data/hg19/ENCODE_GM12878/SICER/RAD21_1_ENCFF000OBV-rmdup-W200-G200-FDR1e-5-islandfiltered.bed	
+Gene expression	No	/media/Data/Dropbox/Research/Ongoing/3D_Genome/data/ENCODE_3cells_gene_expression/GM12878_exp.txt
