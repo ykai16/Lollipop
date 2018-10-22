@@ -35,7 +35,7 @@ A complete list of used genomic and epigenomic data can be seen in the signal ta
 
 ## Generating Training Data
 
-Pre-generated training data used in the paper can be downloaded [here] (https://www.dropbox.com/sh/g2wn6tau6alahp9/AABdwSIbDhwM-qlgb1qOMDzva?dl=0). The data format is:
+Pre-generated training data used in the paper can be downloaded [here](https://www.dropbox.com/sh/g2wn6tau6alahp9/AABdwSIbDhwM-qlgb1qOMDzva?dl=0). The data format is:
 
 | chrom   |      start1      |  start2 |     response      | ...features...     |
 |----------|:-------------:|------:|:-------------:|:-------------:|
